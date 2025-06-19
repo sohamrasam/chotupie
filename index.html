@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chotu</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        .font-serif-display { font-family: 'Playfair Display', serif; }
+        .font-serif-body { font-family: 'Lora', serif; }
+        
+        /* Set a beautiful gradient background */
+        body {
+            background-color: #fde2e4;
+            background-image: linear-gradient(315deg, #fde2e4 0%, #e6e6e6 74%);
+        }
+
+        /* --- 3D Plaque Effect --- */
+        /* This container will hold our main content and apply the 3D perspective */
+        .perspective-container {
+            perspective: 1000px;
+        }
+
+        /* The plaque itself. It will react to mouse movement */
+        .plaque {
+            transition: transform 0.1s ease-out;
+            transform-style: preserve-3d;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.4);
+        }
+
+        /* --- Scroll Animation --- */
+        /* This class will be added by JavaScript when an element is in view */
+        .is-visible {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+        
+        /* The initial state for elements that will be animated */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        /* Stagger the animation for a nicer effect */
+        .reveal-delay-1 { transition-delay: 200ms; }
+        .reveal-delay-2 { transition-delay: 400ms; }
+        .reveal-delay-3 { transition-delay: 600ms; }
+    </style>
+</head>
+<body class="font-serif-body text-gray-700 overflow-x-hidden">
+
+    <!-- The perspective container creates the 3D space -->
+    <div class="perspective-container min-h-screen w-full flex items-center justify-center p-4 sm:p-6 lg:p-8">
+
+        <!-- The "plaque" that contains all the content and tilts with the mouse -->
+        <div id="plaque" class="plaque w-full max-w-4xl bg-white/70 backdrop-blur-xl rounded-2xl p-8 sm:p-12">
+            
+            <header class="text-center mb-12 reveal">
+                <h1 class="font-serif-display text-5xl md:text-6xl font-bold text-gray-900">My Dearest Chotu ❤️</h1>
+                <p class="mt-4 text-lg text-gray-600 italic">For my special Ladoba 😘 </p>
+            </header>
+
+            <main>
+                <section class="mb-16 reveal reveal-delay-1">
+                    <h2 class="font-serif-display text-3xl font-bold mb-4 border-b pb-2 border-gray-300">I Am Truly Sorry</h2>
+                    <p class="text-base leading-relaxed mb-4">
+                     I can't express how deeply I regret mafh kar mala me khup chukicha aaikvl tula n bollo aasa nahi bolayla pahije hota me khup jiv lavtes tu mala n me return madhe evdha bolun baslo. There is no excuse for what I did, and I want to apologize from the bottom of my heart.
+                    </p>
+                    <p class="text-base leading-relaxed">
+                        Ik me tula khup jast hurt kela te bolun, parat ti chuk kadhich honar nahi. You didn't deserve that, and I am so sorry for making you feel like you are no one to me.
+                    </p>
+                </section>
+
+                <section class="mb-16 reveal">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        
+                        <div class="group reveal reveal-delay-1">
+                            <div class="bg-gray-50 p-4 rounded-lg shadow-lg transform group-hover:scale-105 group-hover:-rotate-2 transition-transform duration-300 ease-in-out">
+                                <img src="https://i.postimg.cc/bvspsbyY/Whats-App-Image-2025-06-19-at-09-13-43.jpg" alt="A cherished memory" class="rounded-md w-full h-auto object-cover">
+                                <p class="mt-3 text-sm text-center text-gray-600 font-semibold">My Cutiepie 😘</p>
+                            </div>
+                        </div>
+
+                        <div class="group reveal reveal-delay-2">
+                            <div class="bg-gray-50 p-4 rounded-lg shadow-lg transform group-hover:scale-105 group-hover:rotate-2 transition-transform duration-300 ease-in-out">
+                                <img src="https://i.postimg.cc/bwFjcJQ7/Whats-App-Image-2025-06-19-at-09-13-43-1.jpg" alt="A cherished memory" class="rounded-md w-full h-auto object-cover">
+                                <p class="mt-3 text-sm text-center text-gray-600 font-semibold">Maza Ladobaaa 😍</p>
+                            </div>
+                        </div>
+
+                        <div class="group reveal reveal-delay-3">
+                            <div class="bg-gray-50 p-4 rounded-lg shadow-lg transform group-hover:scale-105 transition-transform duration-300 ease-in-out">
+                                <img src="https://i.postimg.cc/9Fm3DT13/Whats-App-Image-2025-06-19-at-09-13-43-2.jpg" alt="A cherished memory" class="rounded-md w-full h-auto object-cover">
+                                <p class="mt-3 text-sm text-center text-gray-600 font-semibold">My Fav ladydon ❤️</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="mb-12 reveal">
+                    <h2 class="font-serif-display text-3xl font-bold mb-4 border-b pb-2 border-gray-300">My Promise To You</h2>
+                    <p class="text-base leading-relaxed mb-4">
+                        Me kadhich tula parat aasa treat karnar nahi u are really very important part of my life which i cant replace ever like tu sakki aasa vibe yeto tuzya sobat astana jari different mother kadhun aslo tari.....mafh kar mala khup japen hya pudhe tula pan hurt nahi karnar adhich khup loka aahet tula hurt karayla tyat me pan aasach kela ter kahich fharak nasel. Mafh kar mala.
+                    </p>
+                    <p class="text-base leading-relaxed">
+                       Mazya sathi tu khup important mala nkoy te dorami chi keychain kiva aajun kahi tu sobat raha bas aahe mala and khush raha fakt. I hope you can see the sincerity in my heart.
+                    </p>
+                </section>
+            </main>
+
+            <footer class="text-center reveal">
+                <p class="font-serif-display text-xl text-gray-700">With all my heart,</p>
+                <p class="font-serif-display text-2xl mt-2 font-bold text-gray-900"> Tuza Soham </p>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        // --- 3D Plaque Mouse Effect ---
+        const plaque = document.getElementById('plaque');
+        const plaqueContainer = document.querySelector('.perspective-container');
+        
+        plaqueContainer.addEventListener('mousemove', (e) => {
+            // Get the center of the plaque
+            const { width, height, left, top } = plaque.getBoundingClientRect();
+            const centerX = left + width / 2;
+            const centerY = top + height / 2;
+
+            // Get mouse position relative to the plaque's center
+            const mouseX = e.clientX - centerX;
+            const mouseY = e.clientY - centerY;
+
+            // Define how much the plaque should rotate
+            const rotateX = (-1) * mouseY / (height / 2) * 5; // Max rotation 5 degrees
+            const rotateY = mouseX / (width / 2) * 5; // Max rotation 5 degrees
+
+            // Apply the rotation
+            plaque.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+
+        // Reset the rotation when the mouse leaves the container
+        plaqueContainer.addEventListener('mouseleave', () => {
+            plaque.style.transform = 'rotateX(0deg) rotateY(0deg)';
+        });
+
+        // --- Scroll Reveal Animation ---
+        const revealElements = document.querySelectorAll('.reveal');
+
+        // Create an observer
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                // If the element is intersecting the viewport, add the 'is-visible' class
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // No need to observe it anymore
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1 // Trigger when 10% of the element is visible
+        });
+
+        // Observe each reveal element
+        revealElements.forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
